@@ -1,7 +1,9 @@
 package com.picpay.desafio.android
 
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.whenever
+import com.picpay.desafio.android.data.network.PicPayService
+import com.picpay.desafio.android.domain.entities.User
+import io.mockk.every
+import io.mockk.mockk
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import retrofit2.Call
@@ -9,18 +11,18 @@ import retrofit2.Response
 
 class ExampleServiceTest {
 
-    private val api = mock<PicPayService>()
+    private val api = mockk<PicPayService>()
 
     private val service = ExampleService(api)
 
     @Test
     fun exampleTest() {
         // given
-        val call = mock<Call<List<User>>>()
+        val call = mockk<Call<List<User>>>()
         val expectedUsers = emptyList<User>()
 
-        whenever(call.execute()).thenReturn(Response.success(expectedUsers))
-        whenever(api.getUsers()).thenReturn(call)
+        every { call.execute() } returns Response.success(expectedUsers)
+        every { api.getUsers() } returns call
 
         // when
         val users = service.example()
