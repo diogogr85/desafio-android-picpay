@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.presentation.home.adapters
+package com.picpay.desafio.android.presentation.Users.adapters
 
 import android.view.View.GONE
 import android.view.View.VISIBLE

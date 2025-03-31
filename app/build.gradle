@@ -20,10 +20,15 @@ android {
 
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 
     buildTypes {
-        debug {}
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            buildConfigField "String", "BASE_API_URL", "\"https://609a908e0f5a13001721b74e.mockapi.io/picpay/api/\""
+        }
 
         release {
             minifyEnabled true
@@ -54,12 +59,13 @@ dependencies {
     implementation libs.adapter.rxjava2
     implementation libs.converter.gson
     implementation libs.okhttp
-    implementation libs.mockwebserver
+    implementation libs.okhttp.logging.interceptor
     implementation libs.picasso
     implementation libs.circleimageview
 
     testImplementation libs.junit
     testImplementation libs.mockk
+    testImplementation libs.mockwebserver
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
     androidTestImplementation libs.mockk.android

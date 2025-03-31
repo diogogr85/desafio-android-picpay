@@ -1,6 +1,6 @@
 package com.picpay.desafio.android
 
-import com.picpay.desafio.android.data.network.PicPayService
+import com.picpay.desafio.android.data.network.picpay.PicPayService
 import com.picpay.desafio.android.domain.entities.User
 import io.mockk.every
 import io.mockk.mockk
@@ -22,7 +22,7 @@ class ExampleServiceTest {
         val expectedUsers = emptyList<User>()
 
         every { call.execute() } returns Response.success(expectedUsers)
-        every { api.getUsers() } returns call
+        every { api.getUsersLegacy() } returns call
 
         // when
         val users = service.example()

@@ -1,6 +1,6 @@
 package com.picpay.desafio.android
 
-import com.picpay.desafio.android.data.network.PicPayService
+import com.picpay.desafio.android.data.network.picpay.PicPayService
 import com.picpay.desafio.android.domain.entities.User
 
 class ExampleService(
@@ -8,7 +8,7 @@ class ExampleService(
 ) {
 
     fun example(): List<User> {
-        val users = service.getUsers().execute()
+        val users = service.getUsersLegacy().execute()
 
         return users.body() ?: emptyList()
     }

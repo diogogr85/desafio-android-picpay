@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.presentation.home
+package com.picpay.desafio.android.presentation.Users
 
 import android.os.Bundle
 import android.view.View
@@ -9,9 +9,9 @@ import com.diogogr85.desafio_picpay.R
 import com.diogogr85.desafio_picpay.databinding.ActivityMainBinding
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.picpay.desafio.android.data.network.PicPayService
+import com.picpay.desafio.android.data.network.picpay.PicPayService
 import com.picpay.desafio.android.domain.entities.User
-import com.picpay.desafio.android.presentation.home.adapters.UserListAdapter
+import com.picpay.desafio.android.presentation.Users.adapters.UserListAdapter
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        service.getUsers()
+        service.getUsersLegacy()
             .enqueue(object : Callback<List<User>> {
                 override fun onFailure(call: Call<List<User>>, t: Throwable) {
                     val message = getString(R.string.error)
