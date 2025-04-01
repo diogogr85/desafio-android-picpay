@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.room.gradle.plugin)
+    alias(libs.plugins.kotlin.ksp)
 }
 
 android {
@@ -33,8 +35,13 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
+            buildConfigField "String", "BASE_API_URL", "\"https://609a908e0f5a13001721b74e.mockapi.io/picpay/api/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    room {
+        schemaDirectory "$projectDir/schemas"
     }
 
     compileOptions {
@@ -56,12 +63,14 @@ dependencies {
     implementation libs.koin.android
     implementation libs.gson
     implementation libs.retrofit
-    implementation libs.adapter.rxjava2
     implementation libs.converter.gson
     implementation libs.okhttp
     implementation libs.okhttp.logging.interceptor
     implementation libs.picasso
     implementation libs.circleimageview
+    implementation libs.androidx.room.runtime
+    implementation libs.androidx.room.ktx
+    ksp libs.androidx.room.compiler
 
     testImplementation libs.junit
     testImplementation libs.mockk

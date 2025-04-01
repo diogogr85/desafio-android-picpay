@@ -1,6 +1,6 @@
 package com.picpay.desafio.android
 
-import com.picpay.desafio.android.domain.entities.User
+import com.picpay.desafio.android.data.models.User
 
 val USERS = listOf(
     User("1.jpg", "John Doe 1", 1, "jd1"),

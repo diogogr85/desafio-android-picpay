@@ -5,7 +5,7 @@ import android.view.View.VISIBLE
 import androidx.recyclerview.widget.RecyclerView
 import com.diogogr85.desafio_picpay.R
 import com.diogogr85.desafio_picpay.databinding.ListItemUserBinding
-import com.picpay.desafio.android.domain.entities.User
+import com.picpay.desafio.android.data.models.User
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
