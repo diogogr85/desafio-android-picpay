@@ -9,8 +9,10 @@ import com.picpay.desafio.android.data.network.repositoriy.PicPayRepositoryImpl
 import com.picpay.desafio.android.domain.repository.PicPayRepository
 import com.picpay.desafio.android.domain.usecase.users.UsersUseCase
 import com.picpay.desafio.android.domain.usecase.users.UsersUseCaseImpl
+import com.picpay.desafio.android.presentation.users.UsersViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
@@ -28,6 +30,10 @@ val repositoryModules = module {
     factory<PicPayRepository> { PicPayRepositoryImpl(get()) }
 }
 
-val usecaseModels = module {
+val useCaseModules = module {
     factory<UsersUseCase> { UsersUseCaseImpl(get()) }
+}
+
+val viewModelModules = module {
+    viewModel<UsersViewModel> { UsersViewModel(get()) }
 }
