@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class PicPayRepositoryImpl(private val picPayService: PicPayService): PicPayRepository {
-    override fun getUser(): Flow<List<User>> = flow {
+    override fun getUsers(): Flow<List<User>> = flow {
         emit(picPayService.getUsers())
     }
 }

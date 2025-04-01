@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.presentation.Users.adapters
+package com.picpay.desafio.android.presentation.users.adapters
 
 import android.view.View.GONE
 import android.view.View.VISIBLE
@@ -18,7 +18,7 @@ class UserListItemViewHolder(
         binding.username.text = user.username
         binding.progressBar.visibility = VISIBLE
         Picasso.get()
-            .load(user.img)
+            .load(user.profileImage)
             .error(R.drawable.ic_round_account_circle)
             .into(binding.picture, object : Callback {
                 override fun onSuccess() {

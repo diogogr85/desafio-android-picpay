@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.presentation.Users
+package com.picpay.desafio.android.presentation.users
 
 import android.os.Bundle
 import android.view.View
@@ -11,7 +11,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.picpay.desafio.android.data.network.picpay.PicPayService
 import com.picpay.desafio.android.domain.entities.User
-import com.picpay.desafio.android.presentation.Users.adapters.UserListAdapter
+import com.picpay.desafio.android.presentation.users.adapters.UserListAdapter
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback

@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 class UsersUseCaseImpl(private val picPayRepository: PicPayRepository): UsersUseCase {
     override fun getUsers(): Flow<List<User>> {
-        return picPayRepository.getUser()
+        return picPayRepository.getUsers()
     }
-
 }

@@ -4,5 +4,5 @@ import com.picpay.desafio.android.domain.entities.User
 import kotlinx.coroutines.flow.Flow
 
 interface PicPayRepository {
-    fun getUser(): Flow<List<User>>
+    fun getUsers(): Flow<List<User>>
 }
