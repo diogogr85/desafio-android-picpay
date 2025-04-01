@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.diogogr85.desafio_picpay.databinding.ListItemUserBinding
 import com.picpay.desafio.android.domain.entities.User
 
-class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
+class UserListAdapter(usersList: List<User> = emptyList()) : RecyclerView.Adapter<UserListItemViewHolder>() {
 
-    var users = emptyList<User>()
+    private var users = emptyList<User>()
         set(value) {
             val result = DiffUtil.calculateDiff(
                 UserListDiffCallback(
@@ -36,4 +36,8 @@ class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
     }
 
     override fun getItemCount(): Int = users.size
+
+    fun update(usersList: List<User>) {
+        users = usersList
+    }
 }

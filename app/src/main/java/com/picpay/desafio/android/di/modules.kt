@@ -10,6 +10,7 @@ import com.picpay.desafio.android.domain.repository.PicPayRepository
 import com.picpay.desafio.android.domain.usecase.users.UsersUseCase
 import com.picpay.desafio.android.domain.usecase.users.UsersUseCaseImpl
 import com.picpay.desafio.android.presentation.users.UsersViewModel
+import com.picpay.desafio.android.presentation.users.adapters.UserListAdapter
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -36,4 +37,8 @@ val useCaseModules = module {
 
 val viewModelModules = module {
     viewModel<UsersViewModel> { UsersViewModel(get()) }
+}
+
+val adapterModules = module {
+    factory<UserListAdapter> { UserListAdapter() }
 }
