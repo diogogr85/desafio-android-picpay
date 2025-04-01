@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.presentation.home.adapters
+package com.picpay.desafio.android.presentation.users.adapters
 
 import androidx.recyclerview.widget.DiffUtil
 import com.picpay.desafio.android.domain.entities.User
