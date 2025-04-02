@@ -1,6 +1,6 @@
 package com.picpay.desafio.android.data.network.picpay
 
-import com.picpay.desafio.android.domain.entities.User
+import com.picpay.desafio.android.data.models.User
 
 class DummyPicPayServiceWrapper(
     private val service: PicPayService

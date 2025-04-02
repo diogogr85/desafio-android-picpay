@@ -1,6 +1,6 @@
 package com.picpay.desafio.android.domain.usecase.users
 
-import com.picpay.desafio.android.domain.entities.User
+import com.picpay.desafio.android.data.models.User
 import kotlinx.coroutines.flow.Flow
 
 interface UsersUseCase {
