@@ -6,10 +6,6 @@ import retrofit2.http.GET
 
 
 interface PicPayService {
-
-    @GET("users")
-    fun getUsersLegacy(): Call<List<User>>
-
     @GET("users")
     suspend fun getUsers(): List<User>
 }
